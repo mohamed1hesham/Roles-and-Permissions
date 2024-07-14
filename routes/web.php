@@ -44,6 +44,9 @@ Route::post('/report', [UserController::class, 'report'])->name('report');
 Route::get('/add_permission', [AdminController::class, 'add_permission'])->name('add_permission');
 Route::get('/add_role_page', [AdminController::class, 'add_role_page'])->name('add_role_page');
 Route::get('/add_new_user', [AdminController::class, 'add_new_user'])->name('add_new_user');
+
+Route::get('/show_report', [AdminController::class, 'show_report'])->name('show_report');
+
 Route::post('/store_permission', [AdminController::class, 'store_permission'])->name('store_permission');
 
 Route::post('/add_role', [AdminController::class, 'add_role'])->name('add_role');

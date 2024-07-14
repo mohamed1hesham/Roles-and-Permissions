@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Attendance;
 use App\Models\Permissions;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -46,7 +47,12 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
-
+    public function show_report()
+    {
+        return view('admin.report', [
+            'attendances' => Attendance::all(), 'users' => User::all()
+        ]);
+    }
     public function assign_role_to_user(Request $request)
     {
         $request->validate([
